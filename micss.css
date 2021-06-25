@@ -1,0 +1,186 @@
+
+* {
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    /* 
+    The perspective CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
+    The perspective property is used to give a 3D-positioned element some perspective.
+    The perspective property defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.
+    When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.
+    Also look at the perspective-origin property, which defines at which position the user is looking at the 3D object.
+    https://www.w3schools.com/cssref/css3_pr_perspective.asp
+    https://developer.mozilla.org/en-US/docs/Web/CSS/perspective 
+    */
+    perspective: 1000px;
+
+    font-family: sans-serif;
+
+    background: #10101a;
+
+    background-image: url("2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.container {
+    width: 320px; 
+    height: 50px; 
+
+    border: 3px solid black;
+    border-radius: 25px; 
+
+    background: transparent;
+}
+
+.container:hover {
+    cursor: pointer;
+}
+
+.container .labelBlock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute; 
+
+
+    width: 316px; 
+
+    
+    height: 45px; 
+}
+
+.container .labelBlock .sale,
+.container .labelBlock .rent {
+    font-size: 16px;
+    font-weight: 300;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    z-index: 1;
+
+    transition: color .7s ease-out;
+}
+
+.container .labelBlock .sale {
+    color: yellow;
+}
+
+.container .labelBlock .rent {
+    color: #fff;
+}
+
+
+.container .tab {
+    position: absolute; 
+
+    width: 157px; 
+    height: 46px;
+
+    border-radius: 25px; 
+
+    background: cornflowerblue;
+
+    transition: all .3s ease-in;
+}
+
+
+.imagen1 {
+    background-image: url("1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: .5;
+}
+
+.imagen2 {
+    background-image: url("2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: .5;
+}
+
+
+
+
+
+.offsetTab {
+    margin-left: 159px;
+}
+
+
+.fontColorIsYellow {
+    color:yellow !important;
+}
+
+
+.fontColorIsWhite {
+    color: #fff !important;
+}
+
+/* --------- */
+
+.rotateOne {
+    animation: AnimeRotateOne .5s ease-out;
+}
+
+
+.rotateTwo {
+    animation: AnimeRotateTwo .5s ease-out;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes AnimeRotateOne {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(145deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+
+@keyframes AnimeRotateTwo {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(-145deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+
+
+
+
+
+

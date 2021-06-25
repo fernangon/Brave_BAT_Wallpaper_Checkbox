@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox Animado</title>
+    <link rel="stylesheet" href="micss.css">
+
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="labelBlock">
+            <div class="sale">Brave</div>
+            <div class="rent">BAT Token</div>
+        </div>
+
+        <div class="tab"></div>
+
+    </div>
+
+
+    <script>
+        
+        const body = document.body;
+        const container = document.querySelector(".container");
+        const sale = document.querySelector(".sale");
+        const rent = document.querySelector(".rent");
+        const tab = document.querySelector(".tab");
+
+        let tipo_rotacion = 0;
+
+        container.onclick = function modificar_boton() {
+            // Alterna de un lado al otro el fondo neranja-verde.
+            tab.classList.toggle("offsetTab");
+
+            // Alterna el color de las palabras: Design, Develop.
+            sale.classList.toggle("fontColorIsWhite");
+            rent.classList.toggle("fontColorIsYellow");
+
+            if (tipo_rotacion == 0) {
+                body.classList.remove("imagen2");
+                body.classList.add("imagen1");
+                container.classList.remove("rotateTwo"); 
+                container.classList.add("rotateOne");  
+            }
+            else {
+                body.classList.remove("imagen1");
+                body.classList.add("imagen2");
+                container.classList.remove("rotateOne"); 
+                container.classList.add("rotateTwo");    
+            }
+            
+            tipo_rotacion++;
+
+            if (tipo_rotacion == 2) tipo_rotacion = 0;
+        };
+    </script>
+
+
+</body>
+
+
+</html>
+
+
